@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather API</title>
+    <link 
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- container -->
+
+      <div class="row mt-3 mb-2">
+        
+        <div class="col">
+          <h1>LOVELY WEATHER INNIT!</h1>
+          <h1 data-th-text="|IS IT RAINING MONKEYS IN ${city} ?|"></h1>
+        </div>
+        
+      </div>
+
+      <div class="row">
+        
+        <div class="col">
+          
+
+
+          <table class="table table-dark table-bordered">
+            <tr class="text-center ">
+              <th class="col-3">Main</th>
+              <th class="col-3">Description</th>
+              <th class="col-3">Temperature</th>
+              <th class="col-3">Are the clouds lookin' fine?</th>
+            </tr>
+            <tr th:each="weather : ${weatherList}" class="text-center">
+              <td class="col-3" th:text="${weather.main}">Onions</td>
+              <td class="col-3" th:text="${weather.description}">2.41</td>
+              <td class="col-3" th:text="${weather.temperature}">2.41</td>
+              <td class="col-3" ><img th:src="${weather.icon}"/></td>
+            </tr>
+          </table>
+
+        </div>
+
+      </div>
+
+      
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- container -->
+  </body>
+</html>
